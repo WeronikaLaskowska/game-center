@@ -51,7 +51,7 @@
           <p>{{ game.description }}</p>
         </div>
         <div class="genres">
-          <div class="genre" v-for="genre in game.Genres" :key="genre">
+          <div class="genre" v-for="genre in game.Genres" :key="genre.name">
             {{ genre.name }}
           </div>
         </div>
@@ -122,6 +122,7 @@ export default defineComponent({
     });
 
     const redirectToChannel = (url: string) => {
+      //@ts-ignore
       window.open(url, "_blank").focus();
     };
     return { game, loading, router, redirectToChannel };

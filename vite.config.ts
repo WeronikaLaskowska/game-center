@@ -20,7 +20,9 @@ export default defineConfig({
       },
     }),
   ],
-  define: { 'process.env': {} },
+  define: { 'process.env': {
+    VITE_API_KEY:'059e2102b8mshdb657081bb5353ep161249jsn55128607e7e1'
+  } },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

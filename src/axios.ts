@@ -5,13 +5,10 @@ const instance: any = axios.create({
   baseURL: API_URL,
 });
 
-instance.defaults.headers.common[
-  "X-RapidAPI-Key"
-] = `059e2102b8mshdb657081bb5353ep161249jsn55128607e7e1`;
+instance.defaults.headers.common["X-RapidAPI-Key"] = process.env.VITE_API_KEY;
 
-instance.defaults.headers.common[
-  "X-RapidAPI-Host"
-] = `opencritic-api.p.rapidapi.com`;
+instance.defaults.headers.common["X-RapidAPI-Host"] =
+  "opencritic-api.p.rapidapi.com";
 
 instance.interceptors.response.use(
   (response: any) => {
