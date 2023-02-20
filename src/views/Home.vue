@@ -23,6 +23,7 @@ export default defineComponent({
     let loading = ref(true);
     onMounted(async () => {
       await store.fetchGames();
+      console.log(games.value)
 
       setTimeout(() => {
         loading.value = false;

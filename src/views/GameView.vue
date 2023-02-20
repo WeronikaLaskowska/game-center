@@ -68,7 +68,7 @@
           <div class="title">Developer</div>
           <h2 style="margin-bottom: 10px">{{ game.Companies[0].name }}</h2>
           <div class="title">Publisher</div>
-          <h2>{{ game.Companies[1].name }}</h2>
+          <h2>{{game.Companies[1] ?  game.Companies[1].name : '-' }}</h2>
         </div>
       </div>
       <div class="small-card">
@@ -345,5 +345,20 @@ export default defineComponent({
   .large-card-positioning-padding {
     padding: 0 20px;
   }
+  .yt-logo img {
+    width: 100px;
+    height: 25px;
+  }
+  .button {
+  border: 1px solid #7b27f3;
+  color: #7b27f3;
+  min-width: 150px;
+  max-width: 400px;
+  text-align: center;
+  padding: 5px 0;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+}
 }
 </style>
