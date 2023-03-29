@@ -54,12 +54,16 @@ export const useAppStore = defineStore("app", {
   state: () => ({
     games: [] as Array<Game>,
     game: {} as Game,
+    years:['2020', '2021', '2022']
   }),
   actions: {
     async fetchGames() {
+      this.games = []
       try {
-        const response = await axios.get("game/popular");
-        this.games = response.data;
+        this.years.forEach(async(year)=>{
+          const response = await axios.get(`game/hall-of-fame/${year}`);
+          this.games =  this.games.concat(response.data)
+        })
       } catch (e) {
         console.log(e);
       }

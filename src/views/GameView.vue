@@ -112,6 +112,7 @@ export default defineComponent({
   components: { Loader, ImageById },
   setup() {
     let loading = ref(true);
+
     const store = useAppStore();
     const { game } = storeToRefs(store);
     onMounted(async () => {
@@ -155,7 +156,7 @@ export default defineComponent({
   color: #fff;
 }
 .info-card .game-name {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 600;
   padding: 10px;
 }
